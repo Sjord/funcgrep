@@ -29,4 +29,4 @@ The current model looks like this:
 
 ## Project structure
 
-The Maven ANTLR plugin generates code for the grammars under [src/main/antlr4/nl/sjoerdlangkemper/funcgrep](src/main/antlr4/nl/sjoerdlangkemper/funcgrep). This code includes the CSharpLexer, CSharpParser and CSharpParserBaseListener. In MyParser the lexer and parser are used to create a parse tree, on which MyListener is called. MyListener creates a model and calls JXPath to print the matching nodes.
+The Maven ANTLR plugin generates code for the grammars under [src/main/antlr4/nl/sjoerdlangkemper/funcgrep](src/main/antlr4/nl/sjoerdlangkemper/funcgrep). This code includes the CSharpLexer, CSharpParser and CSharpParserBaseListener. In [MyParser](src/main/java/nl/sjoerdlangkemper/funcgrep/MyParser.java) the lexer and parser are used to create a parse tree, on which [MyListener](src/main/java/nl/sjoerdlangkemper/funcgrep/MyListener.java) is called. MyListener creates a model and calls JXPath to print the matching nodes.
