@@ -1,3 +1,4 @@
+package nl.sjoerdlangkemper.funcgrep;
 import java.util.*;
 
 public class MyClass {
