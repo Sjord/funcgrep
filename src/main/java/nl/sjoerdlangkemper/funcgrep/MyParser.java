@@ -1,9 +1,11 @@
+package nl.sjoerdlangkemper.funcgrep;
 
 import java.io.*;
 import java.util.*;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import org.antlr.v4.runtime.tree.xpath.*;
+import nl.sjoerdlangkemper.funcgrep.csharp.*;
 
 public class MyParser {
     public static void main(String[] args) throws IOException {
@@ -14,12 +16,6 @@ public class MyParser {
         ParseTree tree = parser.compilation_unit();
         MyListener listener = new MyListener(args[1]);
         ParseTreeWalker.DEFAULT.walk(listener, tree);
-
-/*
-        String xpath = "//class_member_declaration";
-        Collection<ParseTree> matches = XPath.findAll(tree, xpath, parser);
-        System.out.println(matches);
-*/
     }
 }
 
