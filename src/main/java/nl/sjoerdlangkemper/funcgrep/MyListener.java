@@ -11,13 +11,13 @@ public class MyListener extends CSharpParserBaseListener {
         this.xpath = xpath;
     }
 
-    private MyClass currentClass;
+    private ClassNode currentClass;
     private List<String> attributes;
-    private MyMethod currentMethod;
+    private MethodNode currentMethod;
 
 	@Override public void enterClass_definition(CSharpParser.Class_definitionContext ctx) { 
         String className = ctx.identifier().getText();
-        this.currentClass = new MyClass(className);
+        this.currentClass = new ClassNode(className);
     }
 
     // Class member declaration. This thing holds both the attributes and the method declaration.
@@ -42,7 +42,7 @@ public class MyListener extends CSharpParserBaseListener {
 
 	@Override public void enterMethod_declaration(CSharpParser.Method_declarationContext ctx) { 
         String methodName = ctx.method_member_name().identifier().get(0).getText();
-        MyMethod method = new MyMethod(methodName);
+        MethodNode method = new MethodNode(methodName);
         this.currentMethod = method;
         this.currentClass.addMethod(method);
     }

@@ -1,11 +1,11 @@
 package nl.sjoerdlangkemper.funcgrep;
 import java.util.*;
 
-public class MyMethod {
+public class MethodNode {
     String name;
     List<String> attributes;
 
-    public MyMethod(String methodName) {
+    public MethodNode(String methodName) {
         this.name = methodName;
         this.attributes = new ArrayList<String>();
     }
