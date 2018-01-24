@@ -1,12 +1,12 @@
 package nl.sjoerdlangkemper.funcgrep;
 import java.util.*;
 
-public class ClassNode {
+public class ClassNode extends Node {
     private String name;
     private List<MethodNode> methods;
 
     ClassNode(String className) {
-        this.name = className;
+        super(className);
         this.methods = new ArrayList<MethodNode>();
     }
 
