@@ -17,11 +17,15 @@ public class MyParser {
         ParseTree tree = parser.compilation_unit();
 
         MyVisitor visitor = new MyVisitor();
-        Object ast = visitor.visit(tree);
+        Nodes ast = visitor.visit(tree);
+        System.out.println("ast: " + ast);
+        System.out.println("ast0: " + ast.get(0));
 
-        Iterator results = JXPathContext.newContext(ast).iterate(args[1]);
+        String xpath = args[1];
+        System.out.println("Results for " + xpath);
+        Iterator results = JXPathContext.newContext(ast).iterate(xpath);
         while (results.hasNext()){
-            System.out.println(results.next());
+            System.out.println("result:" + results.next());
         }
     }
 }

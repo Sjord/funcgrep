@@ -2,23 +2,13 @@ package nl.sjoerdlangkemper.funcgrep;
 import java.util.*;
 
 public class ClassNode extends Node {
-    private String name;
-    private List<MethodNode> methods;
+    Nodes methods;
 
     ClassNode(String className) {
         super(className);
-        this.methods = new ArrayList<MethodNode>();
     }
 
-    public String toString() {
-        return this.name;
-    }
-
-    public List<MethodNode> getMethods() {
+    public Nodes getMethods() {
         return this.methods;
-    }
-
-    public void addMethod(MethodNode method) {
-        this.methods.add(method);
     }
 }
