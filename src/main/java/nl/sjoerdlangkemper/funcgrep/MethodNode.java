@@ -1,19 +1,14 @@
 package nl.sjoerdlangkemper.funcgrep;
 import java.util.*;
 
-public class MethodNode {
-    String name;
+public class MethodNode extends NamedNode {
     List<String> attributes;
 
     public MethodNode(String methodName) {
-        this.name = methodName;
+        super(methodName);
         this.attributes = new ArrayList<String>();
     }
 
-    public String toString() {
-        return this.name;
-    }
-    
     public List<String> getAttributes() {
         return this.attributes;
     }
