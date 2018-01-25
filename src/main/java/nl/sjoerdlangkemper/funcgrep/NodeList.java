@@ -9,4 +9,14 @@ public class NodeList extends ArrayList<Node> {
         }
         return get(0);
     }
+
+    public NodeList getType(Class nodeType) {
+        NodeList result = new NodeList();
+        for (Node node : this) {
+            if (nodeType.isInstance(node)) {
+                result.add(node);
+            }
+        }
+        return result;
+    }
 }
