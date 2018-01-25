@@ -26,6 +26,10 @@ public class MyParserTest extends TestCase
         CharStream stream = CharStreams.fromStream(input);
         NodeList ast = MyParser.parse_code(stream);
 
-        assert ast.one() instanceof ClassNode;
+        NodeList classes = ast.getType(ClassNode.class);
+        ClassNode classNode = (ClassNode)classes.one();
+        assert classNode != null;
+        assert classNode instanceof ClassNode;
+        assert classNode.toString().equals("AccountController");
     }
 }
