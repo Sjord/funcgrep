@@ -9,7 +9,7 @@ Build with Maven:
 
 This will create `target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar`. Run like this:
 
-    java -jar target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar AccountController.cs "//methods[attributes='HttpPost']"
+    java -jar target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar "//methods[attributes='HttpPost']" AccountController.cs 
 
 ## Limitations
 
