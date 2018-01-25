@@ -17,7 +17,7 @@ public class Visitor extends CSharpParserBaseVisitor<NodeList> {
     
         ParseTree attrs = ctx.attributes();
         if (attrs != null && declaration != null) {
-            ((MethodNode)declaration.one()).attributes = visit(ctx.attributes());
+            ((MethodNode)declaration.one()).attributes = visit(attrs);
         }
 
         return declaration;
