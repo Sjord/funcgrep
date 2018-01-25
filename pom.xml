@@ -71,6 +71,11 @@
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>nl.sjoerdlangkemper.funcgrep.MyParser</mainClass>
+            </manifest>
+          </archive>
         </configuration>
         <executions>
           <execution>
