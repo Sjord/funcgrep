@@ -21,11 +21,13 @@ This will create `target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar`. Run
 
 The current model looks like this:
 
-* class
+* files
     * name
-    * methods
+    * classes
         * name
-        * attributes
+        * methods
+            * name
+            * attributes
 
 ## Project structure
 
