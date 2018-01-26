@@ -13,11 +13,16 @@ public class MyParser {
     }
 
     public static void main(String[] args) throws IOException {
-        CharStream input = CharStreams.fromFileName(args[0]);
-        NodeList ast = parse_code(input);
+        RootNode tree = new RootNode();
+        for (int i = 1; i < args.length; i++) {
+            String filename = args[i];
+            CharStream input = CharStreams.fromFileName(filename);
+            NodeList ast = parse_code(input);
+            tree.add(new FileNode(filename, ast));
+        }
 
-        String xpath = args[1];
-        Iterator results = JXPathContext.newContext(ast).iterate(xpath);
+        String xpath = args[0];
+        Iterator results = JXPathContext.newContext(tree).iterate(xpath);
         while (results.hasNext()){
             System.out.println(results.next());
         }

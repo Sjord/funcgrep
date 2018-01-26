@@ -9,23 +9,24 @@ Build with Maven:
 
 This will create `target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar`. Run like this:
 
-    java -jar target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar AccountController.cs "//methods[attributes='HttpPost']"
+    java -jar target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar "//methods[attributes='HttpPost']" AccountController.cs 
 
 ## Limitations
 
 * Unicode BOMs will trigger the error "line 1:0 token recognition error at: ''".
 * Preprocessor directives (e.g. `#region`) are currently not supported.
-* Only one file at a time is supported.
 
 ## Model
 
 The current model looks like this:
 
-* class
+* files
     * name
-    * methods
+    * classes
         * name
-        * attributes
+        * methods
+            * name
+            * attributes
 
 ## Project structure
 
