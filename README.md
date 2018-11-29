@@ -13,7 +13,6 @@ This will create `target/funcgrep-0.1.0-SNAPSHOT-jar-with-dependencies.jar`. Run
 
 ## Limitations
 
-* Unicode BOMs will trigger the error "line 1:0 token recognition error at: ''".
 * Preprocessor directives (e.g. `#region`) are currently not supported.
 
 ## Model
